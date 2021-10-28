@@ -1,0 +1,3 @@
+export const READ_STARSHIPS = 'READ_STARSHIPS'
+
+export const SHOW_ALERT = 'SHOW_ALERT'
