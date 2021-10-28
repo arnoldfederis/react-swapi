@@ -1,4 +1,4 @@
-import { HashRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom'
 
 import AppNavBar from './components/AppNavBar'
 import NotFound from './views/errors/NotFound'
@@ -11,7 +11,7 @@ const App = () => {
   const { variant, showAlert, message } = useSelector(state => state.app.alert)
 
   return (
-    <HashRouter>
+    <BrowserRouter basename="/react-swapi">
       <main className="app">
         <AppNavBar />
         <div className="p-3">
@@ -39,7 +39,7 @@ const App = () => {
         )}
 
       </main>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
