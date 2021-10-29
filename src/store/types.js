@@ -1,3 +1,4 @@
 export const READ_STARSHIPS = 'READ_STARSHIPS'
+export const SET_IS_LOADING = 'SET_IS_LOADING'
 
 export const SHOW_ALERT = 'SHOW_ALERT'
