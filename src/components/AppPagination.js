@@ -1,4 +1,18 @@
+import { useDispatch } from 'react-redux'
+import { SET_IS_LOADING } from '../store/types'
+
 const Pagination = ({ onSetPage, page, hasNext }) => {
+  const dispatch = useDispatch()
+
+  const scrollToTop = () => {
+    dispatch({
+      type: SET_IS_LOADING,
+      payload: true
+    })
+
+    window.scrollTo(0, 0)
+  }
+
   return (
     <div className="d-flex align-items-center justify-content-end">
       <button
@@ -6,6 +20,7 @@ const Pagination = ({ onSetPage, page, hasNext }) => {
         disabled={page <= 1}
         onClick={() => {
           onSetPage(page - 1)
+          scrollToTop()
         }}>
         Previous
       </button>
@@ -15,6 +30,7 @@ const Pagination = ({ onSetPage, page, hasNext }) => {
         disabled={!hasNext}
         onClick={() => {
           onSetPage(page + 1)
+          scrollToTop()
         }}>
         Next
       </button>
